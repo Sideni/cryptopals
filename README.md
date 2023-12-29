@@ -30,7 +30,7 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 18. [Implement CTR, the stream cipher mode](https://github.com/Sideni/cryptopals/blob/master/challenge18.py)
 19. [Break fixed-nonce CTR mode using substitutions](https://github.com/Sideni/cryptopals/blob/master/challenge19.py)
 20. [Break fixed-nonce CTR statistically](https://github.com/Sideni/cryptopals/blob/master/challenge20.py)
-    a. [Character frequencies in English](https://github.com/Sideni/cryptopals/blob/master/chr_freq.json)
+    1. [Character frequencies in English](https://github.com/Sideni/cryptopals/blob/master/chr_freq.json)
 21. [Implement the MT19937 Mersenne Twister RNG](https://github.com/Sideni/cryptopals/blob/master/challenge21.py)
 22. [Crack an MT19937 seed](https://github.com/Sideni/cryptopals/blob/master/challenge22.py)
 23. [Clone an MT19937 RNG from its output](https://github.com/Sideni/cryptopals/blob/master/challenge23.py)
@@ -45,9 +45,9 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 29. [Break a SHA-1 keyed MAC using length extension](https://github.com/Sideni/cryptopals/blob/master/challenge29.py)
 30. [Break an MD4 keyed MAC using length extension](https://github.com/Sideni/cryptopals/blob/master/challenge30.py)
 31. [Implement and break HMAC-SHA1 with an artificial timing leak](https://github.com/Sideni/cryptopals/blob/master/challenge31.py)
-    a. [Web application to break](https://github.com/Sideni/cryptopals/blob/master/challenge31_web.py)
+    1. [Web application to break](https://github.com/Sideni/cryptopals/blob/master/challenge31_web.py)
 32. [Break HMAC-SHA1 with a slightly less artificial timing leak](https://github.com/Sideni/cryptopals/blob/master/challenge32.py)
-    a. [Web application to break](https://github.com/Sideni/cryptopals/blob/master/challenge32_web.py)
+    1. [Web application to break](https://github.com/Sideni/cryptopals/blob/master/challenge32_web.py)
 
 ## Set 5
 
