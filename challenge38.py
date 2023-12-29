@@ -98,6 +98,8 @@ def bruteforce(pwd_list, computed_hmac, salt, pub_c, priv_s, u, g, n):
             return pwd
 
 if __name__ == '__main__':
+    # python challenge38.py [server|client|brute] /path/to/rockyou.txt
+
     random_pass = False
     if len(sys.argv) == 3:
         rockyou_path = sys.argv[2]
