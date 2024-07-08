@@ -85,7 +85,9 @@ class RSA():
     
     def decrypt_str(self, c, priv=None):
         dec = self.decrypt(c, priv=priv)
-        return challenge1.decode_hexstr(hex(dec)[2:])
+        dec_hex = hex(dec)[2:]
+        dec_hex = dec_hex if len(dec_hex) % 2 == 0 else '0' + dec_hex
+        return challenge1.decode_hexstr(dec_hex)
 
 
 if __name__ == '__main__':

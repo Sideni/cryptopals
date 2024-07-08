@@ -60,3 +60,8 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 39. [Implement RSA](https://github.com/Sideni/cryptopals/blob/master/challenge39.py)
 40. [Implement an E=3 RSA Broadcast attack](https://github.com/Sideni/cryptopals/blob/master/challenge40.py)
 
+## Set 6
+
+41. [Implement unpadded message recovery oracle](https://github.com/Sideni/cryptopals/blob/master/challenge41.py)
+42. [Bleichenbacher's e=3 RSA Attack](https://github.com/Sideni/cryptopals/blob/master/challenge42.py)
+
