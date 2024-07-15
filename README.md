@@ -64,4 +64,5 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 
 41. [Implement unpadded message recovery oracle](https://github.com/Sideni/cryptopals/blob/master/challenge41.py)
 42. [Bleichenbacher's e=3 RSA Attack](https://github.com/Sideni/cryptopals/blob/master/challenge42.py)
+42. [DSA key recovery from nonce](https://github.com/Sideni/cryptopals/blob/master/challenge43.py)
 
