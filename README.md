@@ -66,4 +66,5 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 42. [Bleichenbacher's e=3 RSA Attack](https://github.com/Sideni/cryptopals/blob/master/challenge42.py)
 43. [DSA key recovery from nonce](https://github.com/Sideni/cryptopals/blob/master/challenge43.py)
 44. [DSA nonce recovery from repeated nonce](https://github.com/Sideni/cryptopals/blob/master/challenge44.py)
+45. [DSA parameter tampering](https://github.com/Sideni/cryptopals/blob/master/challenge45.py)
 
