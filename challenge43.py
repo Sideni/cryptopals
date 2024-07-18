@@ -94,7 +94,7 @@ def recover_priv_x(known_k, msg, sign_rs, dsa):
     r_inv = challenge39.invmod(r, dsa.q)
     h = dsa.gen_digest(msg)
 
-    return r_inv * ((s * k) - h) % dsa.q
+    return r_inv * ((s * known_k) - h) % dsa.q
 
 if __name__ == '__main__':
     # Test normal behaviour
