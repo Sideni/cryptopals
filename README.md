@@ -68,4 +68,6 @@ My solutions to the [cryptopals](https://cryptopals.com/) challenges.
 44. [DSA nonce recovery from repeated nonce](https://github.com/Sideni/cryptopals/blob/master/challenge44.py)
 45. [DSA parameter tampering](https://github.com/Sideni/cryptopals/blob/master/challenge45.py)
 46. [RSA parity oracle](https://github.com/Sideni/cryptopals/blob/master/challenge46.py)
+47. [Bleichenbacher's PKCS 1.5 Padding Oracle (Simple Case)](https://github.com/Sideni/cryptopals/blob/master/challenge47.py)
+48. [Bleichenbacher's PKCS 1.5 Padding Oracle (Complete Case)](https://github.com/Sideni/cryptopals/blob/master/challenge48.py)
 
