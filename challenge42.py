@@ -1,6 +1,7 @@
 import challenge1
 import challenge39
 
+import math
 import random
 import secrets
 import hashlib
@@ -20,7 +21,7 @@ ASN1_HASH_IDENTIFIERS = {
     b'\x30\x51\x30\x0d\x06\x09\x60\x86\x48\x01\x65\x03\x04\x02\x03\x05\x00\x04\x40': 'SHA-512',
 }
 
-ALPHABET = [chr(i) for i in range(1,256)]
+ALPHABET = bytes([i for i in range(1,256)])
 
 class BLOCK_TYPE(Enum):
     TYPE_0 = 0
@@ -28,7 +29,7 @@ class BLOCK_TYPE(Enum):
     TYPE_2 = 2
 
 def pad_pkcs1_5(data, n, block_type=BLOCK_TYPE.TYPE_1):
-    sign_len = n.bit_length() // 8
+    sign_len = math.ceil(n.bit_length() / 8)
     padding_len = sign_len - len(data) - 3
 
     # Defined here: https://www.rfc-editor.org/rfc/rfc2313#section-8.1
@@ -38,12 +39,14 @@ def pad_pkcs1_5(data, n, block_type=BLOCK_TYPE.TYPE_1):
     # for block type 01, they shall have value FF;
     # and for block type 02, they shall be pseudorandomly generated and nonzero
     
-    if block_type == BLOCK_TYPE.TYPE_0:
+    if block_type == BLOCK_TYPE.TYPE_0: # Reserved for signatures
         pad = b'\x00' * padding_len
-    elif block_type == BLOCK_TYPE.TYPE_1:
+    elif block_type == BLOCK_TYPE.TYPE_1: # Reserved for signatures
         pad = b'\xff' * padding_len
-    elif block_type == BLOCK_TYPE.TYPE_2:
-        pad = b''.join(secrets.choice(ALPHABET) for i in range(padding_len))
+    elif block_type == BLOCK_TYPE.TYPE_2: # Reserved for encryption
+        if padding_len < 8:
+            raise ValueError('The padding string must be at least 8 bytes long')
+        pad = bytes([secrets.choice(ALPHABET) for i in range(padding_len)])
     else:
         raise TypeError('The chosen block type is not supported')
 
