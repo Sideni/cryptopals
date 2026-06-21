@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <h1>Hello there</h1>
+        <h4>General Kenobi...</h4>
+        <input id="my_script" type="file" onchange="loadScript(this)" >
+    </body>
+    <script>
+        function buf2hex(buffer) { // buffer is an ArrayBuffer
+            return [...new Uint8Array(buffer)]
+                .map(x => x.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        async function cbcMac(data) {
+            const encoder = new TextEncoder('latin1');
+            if (data.toString() != '[object ArrayBuffer]') {
+                data = encoder.encode(data);
+            }
+            
+            const key = await window.crypto.subtle.importKey("raw", encoder.encode("YELLOW SUBMARINE"), "AES-CBC", true, ["encrypt", "decrypt"]);
+            
+            const encrypted = await window.crypto.subtle.encrypt(
+                { name: "AES-CBC", iv: new ArrayBuffer(16) },
+                key,
+                data
+            );
+            var enc = buf2hex(encrypted)
+            return enc.substring(enc.length - 32);
+        }
+
+        function loadScript(e) 
+        {
+            var uploaded = e.files[0];      
+            var reader = new FileReader();
+            reader.onload = handleFileLoad;
+            reader.readAsArrayBuffer(uploaded);
+        }
+
+        function handleFileLoad(event) {
+            console.log(event);
+            var script = event.target.result;
+            cbcMac(script).then(mac => {
+                if ('296b8d7cb78a243dda4d0a61d33bbdd1' == mac) {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    var decoder = new TextDecoder('latin1');
+                    script = decoder.decode(script);
+                    s.appendChild(document.createTextNode(script));
+                    document.body.appendChild(s);
+                } else {
+                    alert('JS not trusted, cannot add to DOM...');
+                }
+            });
+        }
+    </script>
+</html>
